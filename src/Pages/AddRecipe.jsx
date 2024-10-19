@@ -73,16 +73,17 @@
 
 // export default AddRecipe;
 import React, { useState } from 'react';
-import { db } from '../firebase'; // Import Firebase Firestore
+import { db, storage } from '../firebase'; // Import Firebase Firestore and Storage
 import { collection, addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import Storage methods
 import { useAuth } from '../context/AuthContext'; // For getting the logged-in user
 
 const AddRecipe = () => {
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
-  const [image, setImage] = useState(null); // State to hold the image file
-  const { user } = useAuth(); // Get the logged-in user
+  const [image, setImage] = useState(null);
+  const { user } = useAuth();
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]); // Set the selected image file
@@ -92,29 +93,38 @@ const AddRecipe = () => {
     e.preventDefault();
 
     if (!user) {
-      alert('Please sign in to add your recipe.'); // Alert if user is not logged in
+      alert('Please sign in to add your recipe.');
       return;
     }
 
     try {
+      // Create a storage reference
+      const storageRef = ref(storage, `recipes/${image.name}`);
+      
+      // Upload the image
+      await uploadBytes(storageRef, image);
+      
+      // Get the download URL
+      const imageUrl = await getDownloadURL(storageRef);
+
       // Create a new recipe document in Firestore
       await addDoc(collection(db, 'recipes'), {
         name,
-        ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()), // Convert ingredients to array
+        ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),
         instructions,
         userId: user.uid, // Ensure user ID is added to the recipe
-        imageUrl: image ? URL.createObjectURL(image) : '', // Set image URL as object URL for preview
+        imageUrl, // Set the image URL from Firebase Storage
         createdAt: new Date(),
       });
 
-      alert('Recipe added successfully!'); // Alert for successful addition
-      setName(''); // Reset name
-      setIngredients(''); // Reset ingredients
-      setInstructions(''); // Reset instructions
-      setImage(null); // Reset image
+      alert('Recipe added successfully!');
+      setName('');
+      setIngredients('');
+      setInstructions('');
+      setImage(null);
     } catch (error) {
-      console.error('Error adding recipe: ', error); // Log error
-      alert('Error adding recipe, please try again.'); // Alert on error
+      console.error('Error adding recipe: ', error);
+      alert('Error adding recipe, please try again.');
     }
   };
 

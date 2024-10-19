@@ -35,16 +35,16 @@ const TrendingRecipes = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="container mx-auto p-5 bg-stone-900 text-white">
+    <div className="container mx-auto p-5 bg-stone-800 text-white">
       <h2 className="text-2xl font-bold mb-4">Trending Recipes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {trendingRecipes.map((recipe) => (
-          <div key={recipe.idMeal} className="recipe-card border p-4 rounded">
+          <div key={recipe.idMeal} className="recipe-card border p-4 rounded border-cyan-900">
             <h3 className="text-lg font-bold">{recipe.strMeal}</h3>
             <img
               src={recipe.strMealThumb}
               alt={recipe.strMeal}
-              className="w-full h-64 object-cover mb-2"
+              className="w-full h-64 object-cover mb-2 bg-cyan-900"
             />
             <p>Category: {recipe.strCategory}</p>
             <p>Cuisine: {recipe.strArea}</p>

@@ -46,49 +46,43 @@
 
 // export default MyRecipes;
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase'; // Import Firebase Firestore
+import { db } from '../firebase'; // Import Firestore
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
-import { useAuth } from '../context/AuthContext'; // For getting the logged-in user
+import { useAuth } from '../context/AuthContext';
 
 const MyRecipes = () => {
-  const [recipes, setRecipes] = useState([]); // State to hold the recipes
-  const { user } = useAuth(); // Get the logged-in user
+  const { user } = useAuth();
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     if (user) {
-      // Create a query to get recipes by the logged-in user
-      const q = query(collection(db, 'recipes'), where('userId', '==', user.uid));
-      
-      // Subscribe to the query and get real-time updates
-      const unsubscribe = onSnapshot(q, (snapshot) => {
-        const recipesData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setRecipes(recipesData); // Update the recipes state with the retrieved data
+      const q = query(
+        collection(db, 'recipes'),
+        where('userId', '==', user.uid) // Filter by user ID
+      );
+
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const recipesData = [];
+        querySnapshot.forEach((doc) => {
+          recipesData.push({ ...doc.data(), id: doc.id });
+        });
+        setRecipes(recipesData);
       });
 
-      // Cleanup subscription on unmount
-      return () => unsubscribe();
+      return () => unsubscribe(); // Cleanup subscription on unmount
     }
-  }, [user]); // Dependency array: runs when 'user' changes
+  }, [user]);
 
   return (
     <div className="container mx-auto p-5">
       <h2 className="text-2xl font-bold mb-4">My Recipes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {recipes.map((recipe) => (
-          <div key={recipe.id} className="recipe-card border p-4 rounded shadow-md">
-            <h3 className="text-lg font-bold mb-2">{recipe.name}</h3>
-            {recipe.imageUrl && ( // Check if imageUrl exists
-              <img 
-                src={recipe.imageUrl} 
-                alt={recipe.name} 
-                className="w-full h-64 object-cover mb-2" 
-              />
-            )}
-            <p className="mb-2">Ingredients: {recipe.ingredients.join(', ')}</p>
-            <p>Instructions: {recipe.instructions}</p>
+          <div key={recipe.id} className="bg-white p-4 rounded-lg shadow-lg">
+            <img src={recipe.imageUrl} alt={recipe.name} className="w-full h-48 object-cover rounded" />
+            <h3 className="text-lg font-bold mt-2">{recipe.name}</h3>
+            <p className="text-sm text-gray-700">Ingredients: {recipe.ingredients.join(', ')}</p>
+            <p className="text-sm text-gray-700">Instructions: {recipe.instructions}</p>
           </div>
         ))}
       </div>
@@ -97,4 +91,3 @@ const MyRecipes = () => {
 };
 
 export default MyRecipes;
-

@@ -1,16 +1,32 @@
+/* Ensure the body takes full height */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flexbox styling to center the signup container */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #ccc;
+}
+
 .signup-container {
   max-width: 400px;
-  margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background-color:rgb(147, 151, 151);
 }
 
 .signup-container h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: rgb(241, 233, 233);
+  font-weight: bolder;
 }
 
 .signup-container form {
@@ -23,11 +39,12 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: black;
 }
 
 .signup-container button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #d2951b;
   color: white;
   border: none;
   border-radius: 4px;
@@ -40,4 +57,9 @@
 
 .signup-container p {
   text-align: center;
+  font-weight: bolder;
+}
+
+body {
+  background-color: #ccc;
 }

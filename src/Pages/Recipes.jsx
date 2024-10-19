@@ -33,7 +33,7 @@ const Recipes = () => {
   };
 
   return (
-    <div className="container mx-auto p-5 bg-sky-950">
+    <div className="container mx-auto p-5 bg-gray-600">
       <h1 className="text-3xl font-bold mb-4 text-lime-100">Recipes</h1>
       <button className="mb-4 px-4 py-2 bg-yellow-500 text-stone-900 font-medium rounded">
         <Link to="/sharerecipe">Add Recipe</Link>
@@ -57,7 +57,7 @@ const Recipes = () => {
         <h2 className="text-xl text-yellow-400">Suggestions:</h2>
         <ul className="list-disc list-inside">
           {suggestedRecipes.map((suggestion, index) => (
-            <li key={index} className="hover:text-blue-500 cursor-pointer" onClick={() => setSearchQuery(suggestion)}>
+            <li key={index} className="hover:text-orange-500 cursor-pointer" onClick={() => setSearchQuery(suggestion)}>
               {suggestion}
             </li>
           ))}
@@ -65,7 +65,7 @@ const Recipes = () => {
       </div>
       {loading && <p>Loading...</p>}
       {recipes.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-sky-950 text-stone-200 border-red-900 border-2 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-gray-600 text-stone-200 border-stone-900  ">
           {recipes.map((recipe) => (
             <div key={recipe.idMeal} className="border p-4 rounded bg-slate-900">
               <h3 className="text-lg font-semibold">{recipe.strMeal}</h3>
