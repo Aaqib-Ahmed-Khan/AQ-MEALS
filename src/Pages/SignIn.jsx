@@ -19,7 +19,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-10 bg-stone-400">
       <h1 className="text-3xl font-bold mb-4">Sign In first to add your recipe</h1>
       <form onSubmit={handleSignIn}>
         <input
