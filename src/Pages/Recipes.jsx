@@ -33,9 +33,9 @@ const Recipes = () => {
   };
 
   return (
-    <div className="container mx-auto p-5">
-      <h1 className="text-3xl font-bold mb-4">Recipes</h1>
-      <button className="mb-4 px-4 py-2 bg-green-500 text-white rounded">
+    <div className="container mx-auto p-5 bg-sky-950">
+      <h1 className="text-3xl font-bold mb-4 text-lime-100">Recipes</h1>
+      <button className="mb-4 px-4 py-2 bg-yellow-500 text-stone-900 font-medium rounded">
         <Link to="/sharerecipe">Add Recipe</Link>
       </button>
       <div className="flex mb-4">
@@ -48,13 +48,13 @@ const Recipes = () => {
         />
         <button 
           onClick={handleSearchClick}
-          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded"
+          className="ml-2 px-4 py-2 bg-cyan-600 text-white rounded"
         >
           Search
         </button>
       </div>
-      <div className="mt-4">
-        <h2 className="text-xl">Suggestions:</h2>
+      <div className="mt-4 text-lime-200">
+        <h2 className="text-xl text-yellow-400">Suggestions:</h2>
         <ul className="list-disc list-inside">
           {suggestedRecipes.map((suggestion, index) => (
             <li key={index} className="hover:text-blue-500 cursor-pointer" onClick={() => setSearchQuery(suggestion)}>
@@ -65,9 +65,9 @@ const Recipes = () => {
       </div>
       {loading && <p>Loading...</p>}
       {recipes.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-sky-950 text-stone-200 border-red-900 border-2 ">
           {recipes.map((recipe) => (
-            <div key={recipe.idMeal} className="border p-4 rounded">
+            <div key={recipe.idMeal} className="border p-4 rounded bg-slate-900">
               <h3 className="text-lg font-semibold">{recipe.strMeal}</h3>
               <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-full h-32 object-cover rounded mb-2" />
               <p>{recipe.strCategory}</p>
