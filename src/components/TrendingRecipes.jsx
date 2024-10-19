@@ -35,7 +35,7 @@ const TrendingRecipes = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 bg-stone-900 text-white">
       <h2 className="text-2xl font-bold mb-4">Trending Recipes</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {trendingRecipes.map((recipe) => (

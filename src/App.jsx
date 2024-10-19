@@ -47,12 +47,15 @@ import MyRecipes from './Pages/MyRecipes';
 import AuthGuard from './components/AuthGuard'; // Ensure you import AuthGuard if you use it
 import './index.css'; // Ensure this line is present
 
-
 const App = () => {
   return (
     <Router>
+      {/* The flex layout is already good here */}
       <div className="flex flex-col min-h-screen">
+        {/* Header */}
         <Header />
+
+        {/* Main content area that will grow to fill the space between Header and Footer */}
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -78,6 +81,8 @@ const App = () => {
             />
           </Routes>
         </div>
+
+        {/* Footer should always be at the bottom */}
         <Footer />
       </div>
     </Router>
