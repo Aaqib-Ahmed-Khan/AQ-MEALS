@@ -6,7 +6,7 @@ const About = () => {
       <h1 className="text-3xl font-bold mb-4">About Us</h1>
       <p className="mb-4">Welcome to AQ Meals, your go-to destination for fresh and flavorful meals! We are dedicated to providing delicious and healthy food options tailored to your tastes.</p>
 
-      <div className="mb-8">
+      <div className="mb-8">                    
         <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
         <p><strong>Address:</strong> 123 Foodie Lane, Meal City, Flavor Town</p>
         <p><strong>Contact Number:</strong> +1 (234) 567-890</p>

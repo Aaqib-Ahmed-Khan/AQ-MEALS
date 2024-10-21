@@ -8,7 +8,7 @@ const Home = () => {
       <HeroSection />
       <TrendingRecipes/>
       {/* Other components specific to the Home page can go here */}
-    </div>
+    </div>                                       
   );
 };
 

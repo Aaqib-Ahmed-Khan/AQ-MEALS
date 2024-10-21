@@ -16,7 +16,7 @@ const Recipes = () => {
     } catch (error) {
       console.error('Error fetching recipes:', error);
     } finally {
-      setLoading(false);
+      setLoading(false);         
     }
   };
 
@@ -38,14 +38,14 @@ const Recipes = () => {
       <button className="mb-4 px-4 py-2 bg-yellow-500 text-stone-900 font-medium rounded">
         <Link to="/sharerecipe">Add Recipe</Link>
       </button>
-      <div className="flex mb-4">
+      <div className="flex mb-4">     
         <input
           type="text"
           placeholder="Search for recipes..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="border p-2 w-full"
-        />
+          className="border p-2 w-full"       
+        />                                 
         <button 
           onClick={handleSearchClick}
           className="ml-2 px-4 py-2 bg-cyan-600 text-white rounded"

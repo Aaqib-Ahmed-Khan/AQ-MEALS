@@ -56,7 +56,7 @@ const App = () => {
         <Header />
 
         {/* Main content area that will grow to fill the space between Header and Footer */}
-        <div className="flex-grow">
+        <div className="flex-grow">          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

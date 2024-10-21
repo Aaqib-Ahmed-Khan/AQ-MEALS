@@ -89,7 +89,7 @@ const AddRecipe = () => {
     setImage(e.target.files[0]); // Set the selected image file
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {        
     e.preventDefault();
 
     if (!user) {

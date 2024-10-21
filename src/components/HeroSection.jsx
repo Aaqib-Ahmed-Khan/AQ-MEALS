@@ -14,9 +14,9 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col justify-center items-center text-center h-full text-white">
         <h1 className="text-5xl font-bold mb-4">Welcome to AQ Meals</h1>
         <p className="text-xl mb-6 text-teal-200">"Fresh, Fast, and Flavorful Meals Await!"</p>
-        <button className="bg-red-800 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg">
+        {/* <button className="bg-red-800 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg">
           Order Now
-        </button>
+        </button> */}
       </div>
     </section>
   );

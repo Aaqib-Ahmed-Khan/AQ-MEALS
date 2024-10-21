@@ -33,7 +33,7 @@ const AuthContext = createContext(); // Create the AuthContext
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // State to hold user information
 
-  // Function to log out the user
+  // Function to log out the user            
   const logout = async () => {
     return auth.signOut(); // Sign out from Firebase
   };
