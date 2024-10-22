@@ -5,8 +5,7 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  const [suggestedRecipes, setSuggestedRecipes] = useState(['cakes', 'chicken', 'pasta', 'salads']); // Add your suggestions here
-
+  const [suggestedRecipes, setSuggestedRecipes] = useState(['cakes', 'chicken', 'pasta', 'salads']);
   const fetchRecipes = async (query) => {
     setLoading(true);
     try {

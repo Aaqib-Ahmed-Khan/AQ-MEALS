@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { db, storage } from '../firebase'; // Import Firebase Firestore and Storage
+import { db, storage } from '../firebase'; 
 import { collection, addDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import Storage methods
-import { useAuth } from '../context/AuthContext'; // For getting the logged-in user
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; 
+import { useAuth } from '../context/AuthContext'; 
 
 const AddRecipe = () => {
   const [name, setName] = useState('');
@@ -13,7 +13,7 @@ const AddRecipe = () => {
   const { user } = useAuth();
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]); // Set the selected image file
+    setImage(e.target.files[0]); 
   };
 
   const handleSubmit = async (e) => {        
@@ -25,22 +25,19 @@ const AddRecipe = () => {
     }
 
     try {
-      // Create a storage reference
-      const storageRef = ref(storage, `recipes/${image.name}`);
       
-      // Upload the image
+      const storageRef = ref(storage, `recipes/${image.name}`);
+     
       await uploadBytes(storageRef, image);
       
-      // Get the download URL
       const imageUrl = await getDownloadURL(storageRef);
 
-      // Create a new recipe document in Firestore
       await addDoc(collection(db, 'recipes'), {
         name,
         ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),
         instructions,
-        userId: user.uid, // Ensure user ID is added to the recipe
-        imageUrl, // Set the image URL from Firebase Storage
+        userId: user.uid, 
+        imageUrl, 
         createdAt: new Date(),
       });
 
