@@ -2,10 +2,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase'; 
 
-const AuthContext = createContext();
+const AuthContext = createContext(); // Create the AuthContext
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null); // State to hold user information
 
   // Function to log out the user            
   const logout = async () => {
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       setUser(user); // Update user state based on authentication status
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe(); // Clean up subscription on unmount
   }, []);
 
   return (
