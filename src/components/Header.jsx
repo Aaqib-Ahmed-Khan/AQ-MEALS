@@ -1,27 +1,4 @@
-// import { Link } from "react-router-dom";
 
-// const Header = () => {
-//   return (
-//     <header className="text-gray-600 body-font">
-//       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-//         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-//           <span className="ml-3 text-xl">AQ MEALS</span>
-//         </a>
-//         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-//           <Link to={'/'} className="mr-5 hover:text-gray-900">Home</Link>
-//           <Link to={'about'} className="mr-5 hover:text-gray-900">About Us</Link>
-//           <Link to={'recipes'} className="mr-5 hover:text-gray-900">Recipe</Link>
-//           <Link to={'/AddRecipe'} className="mr-5 hover:text-gray-900">Add Recipe</Link> {/* Corrected link */}
-//           <Link to={'/MyRecipes'} className="mr-5 hover:text-gray-900">My Recipes</Link> {/* New link */}
-//           <Link to={'/signin'} className="mr-5 hover:text-gray-900">Sign In</Link> {/* Sign In link */}
-//           <Link to={'/signup'} className="mr-5 hover:text-gray-900">Sign Up</Link> {/* Sign Up link */}
-//         </nav>
-//       </div>
-//     </header>
-//   );
-// }
-
-// export default Header;
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Import the AuthContext

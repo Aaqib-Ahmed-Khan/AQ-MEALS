@@ -8,8 +8,8 @@ const About = () => {
 
       <div className="mb-8">                    
         <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
-        <p><strong>Address:</strong> 123 Foodie Lane, Meal City, Flavor Town</p>
-        <p><strong>Contact Number:</strong> +1 (234) 567-890</p>
+        <p><strong>Address:</strong> 123 Karachi.</p>
+        <p><strong>Contact Number:</strong> +9212933848</p>
         <p><strong>Email Address:</strong> contact@aqmeals.com</p>
       </div>
 
@@ -22,3 +22,4 @@ const About = () => {
 };
 
 export default About;
+

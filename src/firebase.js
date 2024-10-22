@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// Your Firebase configuration object
+
 const firebaseConfig = {
   apiKey: "AIzaSyBG3Fm5qhyUD0IbJ8LGwnK1wzi35ILUcW8",
   authDomain: "aq-meals.firebaseapp.com",
@@ -16,14 +16,13 @@ const firebaseConfig = {
   measurementId: "G-Z38KVX5SME"
 };
 
-// Initialize Firebase App
+
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication and export it
+
 export const auth = getAuth(app);
 
-// Initialize Firestore (Database) and export it
 export const db = getFirestore(app);
 
-// Initialize Firebase Storage (for images/files) and export it
+
 export const storage = getStorage(app);

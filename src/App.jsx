@@ -44,8 +44,12 @@ import AddRecipe from './Pages/AddRecipe';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
 import MyRecipes from './Pages/MyRecipes';
-import AuthGuard from './components/AuthGuard'; // Ensure you import AuthGuard if you use it
-import './index.css'; // Ensure this line is present
+import AuthGuard from './components/AuthGuard';
+import './index.css'; // Your custom styles
+
+// Import slick-carousel CSS for the carousel functionality
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css'; // Add these imports
 
 const App = () => {
   return (
