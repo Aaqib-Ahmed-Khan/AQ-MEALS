@@ -28,7 +28,7 @@ const Recipes = () => {
 
   const handleSearchClick = () => {
     if (searchQuery) {
-      fetchRecipes(searchQuery); // Fetch recipes on button click
+      fetchRecipes(searchQuery); 
     }
   };
 

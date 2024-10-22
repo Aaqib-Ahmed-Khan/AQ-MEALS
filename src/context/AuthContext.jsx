@@ -1,11 +1,11 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase'; // Import your Firebase auth instance
+import { auth } from '../firebase'; 
 
-const AuthContext = createContext(); // Create the AuthContext
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // State to hold user information
+  const [user, setUser] = useState(null); 
 
   // Function to log out the user            
   const logout = async () => {
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
       setUser(user); // Update user state based on authentication status
     });
 
-    return () => unsubscribe(); // Clean up subscription on unmount
+    return () => unsubscribe(); 
   }, []);
 
   return (

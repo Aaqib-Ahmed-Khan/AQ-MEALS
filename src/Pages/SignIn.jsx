@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-// Import your background image
-import backgroundImage from '../images/bg.jpg'; // Adjust the path as necessary
+import backgroundImage from '../images/bg.jpg'; 
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +13,7 @@ const SignIn = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to home after successful sign-in
+      navigate("/"); 
     } catch (error) {
       console.error("Error signing in: ", error);
     }

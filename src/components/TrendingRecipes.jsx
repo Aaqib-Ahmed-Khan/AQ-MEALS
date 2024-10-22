@@ -18,7 +18,6 @@ const TrendingRecipes = () => {
         ]);
 
         const data = await Promise.all(responses.map((res) => res.json()));
-        // Extracting meals from the fetched data
         const recipes = data.map((item) => item.meals[0]);
         setTrendingRecipes(recipes);
       } catch (err) {
