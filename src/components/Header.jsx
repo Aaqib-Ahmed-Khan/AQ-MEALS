@@ -23,24 +23,23 @@ const Header = () => {
           <span className="ml-3 text-xl">AQ MEALS</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <Link to={'/'} className="mr-5 hover:text-yellow-400 font-medium ">Home</Link>
-          <Link to={'about'} className="mr-5 hover:text-yellow-400 font-medium">About Us</Link>
-          <Link to={'recipes'} className="mr-5 hover:text-gyellow-400 font-medium ">Recipes</Link>
-          <Link to={'AddRecipe'} className="mr-5 hover:text-yellow-400 font-medium ">Add Recipe</Link>
-          {user ? ( // Show these links only if user is logged in
+         <Link to={'/'} className="mr-5 hover:text-yellow-400 font-medium ">Home</Link>
+       <Link to={'about'} className="mr-5 hover:text-yellow-400 font-medium">About Us</Link>
+        <Link to={'recipes'} className="mr-5 hover:text-gyellow-400 font-medium ">Recipes</Link>
+       <Link to={'AddRecipe'} className="mr-5 hover:text-yellow-400 font-medium ">Add Recipe</Link>       {user ? ( // Show these links only if user is logged in
             <>
-              <Link to={'/myrecipes'} className="mr-5 hover:text-yellow-400 font-normal ">My Recipes</Link>
-              <button 
-                onClick={handleLogout} 
-                className="mr-5 hover:text-yellow-400 bg-transparent border-none cursor-pointer font-bold "
+         <Link to={'/myrecipes'} className="mr-5 hover:text-yellow-400 font-normal ">My Recipes</Link>
+          <button 
+                   onClick={handleLogout} 
+              className="mr-5 hover:text-yellow-400 bg-transparent border-none cursor-pointer font-bold "
               >
-                Log Out
-              </button>
+          Log Out
+                      </button>
             </>
           ) : (
             <>
-              <Link to={'/signin'} className="mr-5 hover:text-yellow-400 font-bold ">Sign In</Link>
-              <Link to={'/signup'} className="mr-5 hover:text-yellow-400 font-bold">Sign Up</Link>
+        <Link to={'/signin'} className="mr-5 hover:text-yellow-400 font-bold ">Sign In</Link>
+     <Link to={'/signup'} className="mr-5 hover:text-yellow-400 font-bold">Sign Up</Link>
             </>
           )}
         </nav>

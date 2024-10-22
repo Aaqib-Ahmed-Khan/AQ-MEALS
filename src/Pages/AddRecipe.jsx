@@ -133,47 +133,47 @@ const AddRecipe = () => {
       <h2 className="text-2xl font-bold mb-4">Add a New Recipe</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Recipe Name</label>
-          <input
-            type="text"
-            value={name}
+       <label className="block text-sm font-medium text-gray-700">Recipe Name</label>
+        <input
+        type="text"
+       value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 block w-full p-2 border"
-            required
+        className="mt-1 block w-full p-2 border"
+        required
           />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Ingredients (comma separated)</label>
-          <input
-            type="text"
-            value={ingredients}
-            onChange={(e) => setIngredients(e.target.value)}
-            className="mt-1 block w-full p-2 border"
-            required
-          />
+        <input
+       type="text"
+         value={ingredients}
+        onChange={(e) => setIngredients(e.target.value)}
+       className="mt-1 block w-full p-2 border"
+       required
+        />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Instructions</label>
           <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-            className="mt-1 block w-full p-2 border"
+          value={instructions}
+         onChange={(e) => setInstructions(e.target.value)}
+           className="mt-1 block w-full p-2 border"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Recipe Image</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="mt-1 block w-full p-2 border"
-            required
+      <label className="block text-sm font-medium text-gray-700">Recipe Image</label>
+        <input
+       type="file"
+         accept="image/*"
+          onChange={handleImageChange}
+         className="mt-1 block w-full p-2 border"
+           required
           />
         </div>
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
           Add Recipe
-        </button>
+      </button>
       </form>
     </div>
   );

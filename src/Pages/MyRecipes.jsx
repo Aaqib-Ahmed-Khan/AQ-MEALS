@@ -35,8 +35,8 @@ const MyRecipes = () => {
           <div key={recipe.id} className="bg-white p-4 rounded-lg shadow-lg">
             <img src={recipe.imageUrl} alt={recipe.name} className="w-full h-48 object-cover rounded" />
             <h3 className="text-lg font-bold mt-2">{recipe.name}</h3>
-            <p className="text-sm text-gray-700">Ingredients: {recipe.ingredients.join(', ')}</p>
-            <p className="text-sm text-gray-700">Instructions: {recipe.instructions}</p>
+       <p className="text-sm text-gray-700">Ingredients: {recipe.ingredients.join(', ')}</p>
+       <p className="text-sm text-gray-700">Instructions: {recipe.instructions}</p>
           </div>
         ))}
       </div>

@@ -34,17 +34,17 @@ const SignIn = () => {
           <input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="border rounded-lg p-2 w-full mb-4"
-            required
+       value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="border rounded-lg p-2 w-full mb-4"
+       required
           />
           <input
             type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border rounded-lg p-2 w-full mb-4"
+    placeholder="Password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    className="border rounded-lg p-2 w-full mb-4"
             required
           />
           <button
